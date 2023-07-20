@@ -12,7 +12,7 @@ const PostForm = ({setPosts}) => {
         })
             .then(value => value.json())
             .then(value => {
-                setPosts(prev => ({...prev,prev}))
+                setPosts(prev => ({...prev,value}))
                 reset()
             })
     }
