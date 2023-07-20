@@ -6,7 +6,7 @@ const Posts = ({posts,setPosts}) => {
         fetch('http://jsonplaceholder.typicode.com/comments')
             .then(value => value.json())
             .then(value => setPosts(value))
-    })
+    },[setPosts])
     return (
         <div>
             {posts.map(post => <Post key={post.id} post={post}/>)}
