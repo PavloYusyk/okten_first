@@ -39,7 +39,6 @@ import React, {useEffect} from 'react';
 import {useForm} from "react-hook-form";
 import {joiResolver} from "@hookform/resolvers/joi";
 import {CarValidator} from "../../../validators/CarValidator";
-import {date} from "joi";
 
 const CarForm = ({setOnSave,setCarForUpdate,carForUpdate}) => {
     const {
