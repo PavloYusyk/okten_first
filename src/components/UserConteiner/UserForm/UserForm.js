@@ -10,7 +10,7 @@ const UserForm = () => {
     const save = async (data) =>{
         try{
             await userService.create(data)
-                .then(value => value.json())
+                .then(value => value.data)
                 .then(value => {
                     setUsers(prev => [...prev,value])
                 })

@@ -7,7 +7,7 @@ const Users = () => {
     const {users,setUsers,trigger} = useContext(Context);
     useEffect(() => {
             userService.getAll().then(({data}) => setUsers(data))
-    },[trigger])
+    },[])
 
     return (
         <div>
