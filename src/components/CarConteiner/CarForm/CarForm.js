@@ -39,14 +39,16 @@ import React, {useEffect} from 'react';
 import {useForm} from "react-hook-form";
 import {joiResolver} from "@hookform/resolvers/joi";
 import {CarValidator} from "../../../validators/CarValidator";
+import {date} from "joi";
 
 const CarForm = ({setOnSave,setCarForUpdate,carForUpdate}) => {
     const {
         register,
         handleSubmit,
         reset,
-        formState:{isValid,errors},
-        setValue
+        formState:{errors},
+        setValue,
+        watch
     } = useForm({
         mode:'all',
         resolver:joiResolver(CarValidator)
