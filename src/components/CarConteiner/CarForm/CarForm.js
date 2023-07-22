@@ -47,8 +47,7 @@ const CarForm = ({setOnSave,setCarForUpdate,carForUpdate}) => {
         handleSubmit,
         reset,
         formState:{errors},
-        setValue,
-        watch
+        setValue
     } = useForm({
         mode:'all',
         resolver:joiResolver(CarValidator)
