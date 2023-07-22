@@ -1,13 +1,13 @@
-import React, {useEffect, useState} from 'react';
-import axios from "axios";
+import React, {useContext, useEffect} from 'react';
 import {userService} from "../../../services/userService";
 import {User} from "../User/User";
+import {Context} from "../UserConteiner";
 const Users = () => {
-    const [users,setUsers] = useState([]);
 
+    const {users,setUsers,trigger} = useContext(Context);
     useEffect(() => {
-        userService.allUsers().then(({data}) => setUsers(data))
-    },[])
+            userService.getAll().then(({data}) => setUsers(data))
+    },[trigger])
 
     return (
         <div>
