@@ -2,12 +2,12 @@ import React, {createContext, useState} from 'react';
 import {CommentForm} from "./CommentForm/CommentForm";
 import {Comments} from "./Comments/Comments";
 
-const Context = createContext(null)
+const ContextComment = createContext(null)
 const CommentConteiner = () => {
     const [trigger,setTrigger] = useState(null);
     const [comments,setComments] = useState([]);
     return (
-        <Context.Provider value={{
+        <ContextComment.Provider value={{
             trigger,
             setTrigger:() => setTrigger(prev => !prev),
             comments,
@@ -18,8 +18,8 @@ const CommentConteiner = () => {
                 <hr/>
                 <Comments/>
             </div>
-        </Context.Provider>
+        </ContextComment.Provider>
     );
 };
 
-export {CommentConteiner};
+export {CommentConteiner,ContextComment};

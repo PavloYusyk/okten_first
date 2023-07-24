@@ -1,10 +1,10 @@
 import React, {useContext, useEffect} from 'react';
-import {Context} from "../../UserConteiner/UserConteiner";
+import {ContextComment} from "../../CommentConteiner/CommentConteiner";
 import {commentService} from "../../../services/commentService";
 import {Comment} from "../Comment/Comment";
 
 const Comments = () => {
-    const {comments,setComments} = useContext(Context);
+    const {comments,setComments} = useContext(ContextComment);
 
     useEffect(() => {
         commentService.getAll().then(({data}) => setComments(data))
@@ -12,7 +12,7 @@ const Comments = () => {
 
     return (
         <div>
-            {comments.map(commentItem => <Comment key={commentItem.id} commentItem={commentItem}/>)}
+            {comments.map(comment => <Comment key={comment.id} comment={comment}/>)}
         </div>
     );
 };
