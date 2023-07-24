@@ -4,7 +4,7 @@ import {User} from "../User/User";
 import {Context} from "../UserConteiner";
 const Users = () => {
 
-    const {users,setUsers,trigger} = useContext(Context);
+    const {users,setUsers} = useContext(Context);
     useEffect(() => {
             userService.getAll().then(({data}) => setUsers(data))
     },[])
