@@ -1,11 +1,12 @@
 import React from 'react';
-import {UserConteiner} from "./components/UserConteiner/UserConteiner";
-import {CommentConteiner} from "./components/CommentConteiner/CommentConteiner";
+import {SelectComponent} from "./components/SelectComponent";
+
+
 
 const App = () => {
-  return (
+    return (
       <div>
-        <CommentConteiner/>
+        <SelectComponent/>
       </div>
   );
 };
