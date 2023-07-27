@@ -1,4 +1,4 @@
-import {createBrowserRouter} from "react-router-dom";
+import {createBrowserRouter, Navigate} from "react-router-dom";
 
 import {MainLayout} from "./layouts/MainLayout/MainLayout";
 import {TodosPage,AlbumsPage,CommentsPage,PostsPage,NotFoundPage} from "./pages";
@@ -10,6 +10,10 @@ const router = createBrowserRouter([
         element:<MainLayout/>,
         children:[
             {
+                index: true,
+                element:<Navigate to={'todos'}/>
+            },
+            {
                 path:'todos',
                 element:<TodosPage/>
             },
@@ -18,7 +22,7 @@ const router = createBrowserRouter([
                 element:<AlbumsPage/>
             },
             {
-                path:'com',
+                path:'comments',
                 element:<CommentsPage/>,
                 children:[
                     {
